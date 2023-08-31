@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+## Para rodar o app baixar o .env
+-[link do drive com as envs](https://drive.google.com/drive/folders/13l9Vxk1LDT6ZciQe4ksoFh7RPayRC-i-?usp=sharing)
+
+login pode ser feito com o email e senha:
+email: teste@teste.com
+password: 123456
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
