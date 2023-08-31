@@ -139,7 +139,7 @@ class _CartPageState extends State<CartPage> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.06,
+                                    width: MediaQuery.of(context).size.width * 0.03,
                                   ),
                                   IconButton(
                                     onPressed: () => cubit.add(cubit.listProductEntity[index]!),
