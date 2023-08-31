@@ -1,0 +1,12 @@
+{
+  "welcome-text": "%s, this text is in english",
+  "login": "Login",
+  "password": "Password",
+  "search": "Search",
+  "product": "Product",
+  "products": "Products",
+  "price": "Price",
+  "cart": "Cart",
+  "cartEmpty": "Cart empty",
+  "receipt": "Receipt"
+}

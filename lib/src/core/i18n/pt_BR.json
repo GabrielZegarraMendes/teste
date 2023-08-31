@@ -1,0 +1,11 @@
+{
+  "login": "Entrar",
+  "password": "Senha",
+  "search": "Pesquisar",
+  "product": "Produto",
+  "products": "Produtos",
+  "price": "Preço",
+  "cart": "Carrinho",
+  "cartEmpty": "Carrinho vazio",
+  "receipt": "Comprovante"
+}
