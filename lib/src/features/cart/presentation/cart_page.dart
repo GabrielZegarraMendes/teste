@@ -47,7 +47,7 @@ class _CartPageState extends State<CartPage> {
         padding: EdgeInsets.only(left: CustomSizes.sizeXL),
         child: ECBottom(
           onTap: () => Modular.to.pop(),
-          text: 'Continuar comprando',
+          text: 'goShopping'.i18n(),
           width: MediaQuery.of(context).size.width / 2,
           textSize: 12,
         ),
@@ -58,7 +58,7 @@ class _CartPageState extends State<CartPage> {
           onTap: () {
             cubit.createPdf();
           },
-          text: 'Finalizar',
+          text: 'checkout'.i18n(),
         ),
       ),
       body: BlocBuilder(
@@ -129,7 +129,7 @@ class _CartPageState extends State<CartPage> {
                                         ),
                                         Text(
                                           '${'price'.i18n()}: '
-                                          '${cubit.listProductEntity[index]!.price!}',
+                                          '${'money'.i18n()}\$ ${cubit.listProductEntity[index]!.price!}',
                                           style: TextStyle(
                                             fontSize: CustomSizes.sizeM,
                                             fontWeight: FontWeight.w500,

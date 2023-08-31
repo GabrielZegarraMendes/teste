@@ -150,7 +150,7 @@ class _ProductsPageState extends State<ProductsPage> {
                                           ),
                                           Text(
                                             '${'price'.i18n()}: '
-                                            '${cubit.searchProductEntity[index]!.price!}',
+                                            '${'money'.i18n()}\$ ${cubit.searchProductEntity[index]!.price!}',
                                             style: TextStyle(
                                               fontSize: CustomSizes.sizeM,
                                               fontWeight: FontWeight.w500,

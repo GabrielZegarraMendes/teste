@@ -8,5 +8,8 @@
   "price": "Price",
   "cart": "Cart",
   "cartEmpty": "Cart empty",
-  "receipt": "Receipt"
+  "receipt": "Receipt",
+  "money": "US",
+  "goShopping": "Go Shopping",
+  "checkout": "Checkout"
 }

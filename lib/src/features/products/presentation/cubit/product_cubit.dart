@@ -36,7 +36,7 @@ class ProductCubit extends Cubit<GenericState> {
       results = listProductEntity;
       results = results
           .where(
-            (results) => results!.name!.contains(item),
+            (results) => results!.name!.toLowerCase().contains(item.toLowerCase()),
           )
           .toList();
       searchProductEntity = results;
