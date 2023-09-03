@@ -40,77 +40,79 @@ class _LoginPageState extends State<LoginPage> {
       body: BlocBuilder(
         builder: (context, state) {
           if (state is InitState || state is ErrorState) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 200,
-                    width: 200,
-                    child: Image.asset(CustomIconsConst.baseAppLogo),
-                  ),
-                  Text(
-                    'login'.i18n(),
-                    style: TextStyle(
-                      color: CustomColor.colorBrandSecondaryDark,
-                      fontSize: 30,
+            return SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 200,
+                      width: 200,
+                      child: Image.asset(CustomIconsConst.baseAppLogo),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width / CustomSizes.sizeM,
-                      vertical: MediaQuery.of(context).size.width / CustomSizes.sizeXL,
+                    Text(
+                      'login'.i18n(),
+                      style: TextStyle(
+                        color: CustomColor.colorBrandSecondaryDark,
+                        fontSize: 30,
+                      ),
                     ),
-                    child: ECTextFormField(
-                      controller: cubit.emailController,
-                      hintText: 'E-mail',
-                      onChanged: (value) {
-                        cubit.validateBottom(
-                            cubit.passwordController.text, value,);
-                      },
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width / CustomSizes.sizeM,
+                        vertical: MediaQuery.of(context).size.width / CustomSizes.sizeXL,
+                      ),
+                      child: ECTextFormField(
+                        controller: cubit.emailController,
+                        hintText: 'E-mail',
+                        onChanged: (value) {
+                          cubit.validateBottom(
+                              cubit.passwordController.text, value,);
+                        },
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width / CustomSizes.sizeM,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width / CustomSizes.sizeM,
+                      ),
+                      child: ECTextFormField(
+                        controller: cubit.passwordController,
+                        obscureText: true,
+                        hintText: 'password'.i18n(),
+                        onChanged: (value) {
+                          cubit.validateBottom(cubit.emailController.text, value);
+                        },
+                      ),
                     ),
-                    child: ECTextFormField(
-                      controller: cubit.passwordController,
-                      obscureText: true,
-                      hintText: 'password'.i18n(),
-                      onChanged: (value) {
-                        cubit.validateBottom(cubit.emailController.text, value);
-                      },
-                    ),
-                  ),
-                  state is ErrorState
-                      ? Padding(
-                          padding: EdgeInsets.symmetric(vertical: CustomSizes.sizeXXS),
-                          child: SizedBox(
-                            height: 40,
-                            child: Text(
-                              'Email ou senha incorreto.',
-                              style: TextStyle(
-                                color: CustomColor.colorFeedbackCriticalDark,
+                    state is ErrorState
+                        ? Padding(
+                            padding: EdgeInsets.symmetric(vertical: CustomSizes.sizeXXS),
+                            child: SizedBox(
+                              height: 40,
+                              child: Text(
+                                'Email ou senha incorreto.',
+                                style: TextStyle(
+                                  color: CustomColor.colorFeedbackCriticalDark,
+                                ),
                               ),
                             ),
-                          ),
-                        )
-                      : const SizedBox(height: 40),
-                  const SizedBox(height: 40),
-                  ECBottom(
-                    text: 'login'.i18n(),
-                    onTap: cubit.validate
-                        ? () {
-                            cubit.login(
-                              cubit.emailController.text,
-                              cubit.passwordController.text,
-                            );
-                          }
-                        : null,
-                  ),
-                ],
+                          )
+                        : const SizedBox(height: 40),
+                    const SizedBox(height: 40),
+                    ECBottom(
+                      text: 'login'.i18n(),
+                      onTap: cubit.validate
+                          ? () {
+                              cubit.login(
+                                cubit.emailController.text,
+                                cubit.passwordController.text,
+                              );
+                            }
+                          : null,
+                    ),
+                  ],
+                ),
               ),
             );
           }
